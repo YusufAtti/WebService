@@ -11,7 +11,7 @@ Public Class service
     <WebMethod>
     Public Function Personal(adi As String, soyadi As String) As DataSet
         ' Veritabanı bağlantısı için gerekli bağlantı dizesi
-        Dim baglanti As New SqlConnection("Data Source=10.6.40.162\ZAFER-MSI3,1433;Initial Catalog=YUSUF;User ID=sa;Password=D+123;Trusted_Connection=False")
+        Dim baglanti As New SqlConnection("Data Source=IP\DB_NAME,PORT;Initial Catalog=TABLE_NAME;User ID=NAME;Password=PASS;Trusted_Connection=False")
 
         ' SQL komutunu doğru şekilde hazırlıyoruz
         Dim Komut As New SqlCommand("SELECT * FROM dbo.Table_1 WHERE Name LIKE @adi AND Surname LIKE @soyadi", baglanti)
@@ -36,7 +36,7 @@ Public Class service
     <WebMethod>
     Public Function VeriEkle(ad As String, soyad As String) As String
         ' Veritabanı bağlantısı için gerekli bağlantı dizesi
-        Dim baglanti As New SqlConnection("Data Source=10.6.40.162\ZAFER-MSI3,1433;Initial Catalog=YUSUF;User ID=sa;Password=D+123;Trusted_Connection=False")
+        Dim baglanti As New SqlConnection("Data Source=IP\DB_NAME,PORT;Initial Catalog=TABLE_NAME;User ID=NAME;Password=PASS;Trusted_Connection=False")
 
         ' SQL komutunu hazırlıyoruz (INSERT INTO)
         Dim Komut As New SqlCommand("INSERT INTO dbo.Table_1 (Name, Surname) VALUES (@ad, @soyad)", baglanti)
@@ -60,7 +60,7 @@ Public Class service
     <WebMethod>
     Public Function TumKayitlar() As DataSet
         ' Veritabanı bağlantısı için gerekli bağlantı dizesi
-        Dim baglanti As New SqlConnection("Data Source=10.6.40.162\ZAFER-MSI3,1433;Initial Catalog=YUSUF;User ID=sa;Password=D+123;Trusted_Connection=False")
+        Dim baglanti As New SqlConnection("Data Source=IP\DB_NAME,PORT;Initial Catalog=TABLE_NAME;User ID=NAME;Password=PASS;Trusted_Connection=False")
 
         ' Tüm kayıtları seçmek için SQL komutunu oluşturuyoruz
         Dim Komut As New SqlCommand("SELECT * FROM dbo.Table_1", baglanti)
@@ -81,7 +81,7 @@ Public Class service
     <WebMethod>
     Public Function KayitSilID(ID As Integer) As String
         ' Veritabanı bağlantısı için gerekli bağlantı dizesi
-        Dim baglanti As New SqlConnection("Data Source=10.6.40.162\ZAFER-MSI3,1433;Initial Catalog=YUSUF;User ID=sa;Password=D+123;Trusted_Connection=False")
+        Dim baglanti As New SqlConnection("Data Source=IP\DB_NAME,PORT;Initial Catalog=TABLE_NAME;User ID=NAME;Password=PASS;Trusted_Connection=False")
 
         ' SQL DELETE komutunu oluşturuyoruz
         Dim Komut As New SqlCommand("DELETE FROM dbo.Table_1 WHERE ID = @ID", baglanti)
@@ -109,7 +109,7 @@ Public Class service
     <WebMethod>
     Public Function KayitSilIDAdSoyad(ID As Integer, ad As String, soyad As String) As String
         ' Veritabanı bağlantısı için gerekli bağlantı dizesi
-        Dim baglanti As New SqlConnection("Data Source=10.6.40.162\ZAFER-MSI3,1433;Initial Catalog=YUSUF;User ID=sa;Password=D+123;Trusted_Connection=False")
+        Dim baglanti As New SqlConnection("Data Source=IP\DB_NAME,PORT;Initial Catalog=TABLE_NAME;User ID=NAME;Password=PASS;Trusted_Connection=False")
 
         ' SQL DELETE komutunu oluşturuyoruz
         Dim Komut As New SqlCommand("DELETE FROM dbo.Table_1 WHERE ID = @ID AND Name = @ad AND Surname = @soyad", baglanti)
@@ -139,7 +139,7 @@ Public Class service
     <WebMethod>
     Public Function KayitGuncelle(ID As Integer, yeniAd As String, yeniSoyad As String) As String
         ' Veritabanı bağlantısı için gerekli bağlantı dizesi
-        Dim baglanti As New SqlConnection("Data Source=10.6.40.162\ZAFER-MSI3,1433;Initial Catalog=YUSUF;User ID=sa;Password=D+123;Trusted_Connection=False")
+        Dim baglanti As New SqlConnection("Data Source=IP\DB_NAME,PORT;Initial Catalog=TABLE_NAME;User ID=NAME;Password=PASS;Trusted_Connection=False")
 
         ' SQL UPDATE komutunu oluşturuyoruz
         Dim Komut As New SqlCommand("UPDATE dbo.Table_1 SET Name = @yeniAd, Surname = @yeniSoyad WHERE ID = @ID", baglanti)
